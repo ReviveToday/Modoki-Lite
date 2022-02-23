@@ -20,10 +20,24 @@ bootstrap:
   # refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
   date_format: "%-d %B %Y"
 
-  # If you want to link only specific pages in your header, uncomment
-  # this and add the path to the page *files* in order as they should show up
-  #header_pages:
-  # - about.md
+  # Header menu has 2 levels of submenu.
+  header_menu:
+  - title: Page Title
+    page: about.md
+  - title: External Thing
+    link: https://google.com
+  - title: SubThing
+    menu:
+    - title: Page Title
+      menu:
+      - title: Page Title
+        page: about.md
+  
+  # Footer menu does not support submenu.
+  footer_menu:
+  - title: Fancy Thing
+    page: about.md
+
 
 
 # Build settings
