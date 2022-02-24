@@ -12,7 +12,7 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 					{%- for menu in site.bootstrap.header_menu -%}
-					<li class="nav-item px-2">
+					<li class="{%- if menu.menu -%}nav-item dropdown px-2{%- else -%}nav-item px-2{%- endif -%}">
 						<a class="{%- if menu.menu -%}nav-link dropdown-toggle{%- else -%}nav-link{%- endif -%}" href="#" {%- if menu.menu -%}id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"{%- endif -%}>{{ menu.title }}</a>
 						{%- if menu.menu -%}
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
