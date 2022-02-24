@@ -12,18 +12,51 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 					{%- for menu in site.bootstrap.header_menu -%}
+					{%- assign url = "#" -%}
+
+					{%- if menu.page -%}
+					{%- assign my_page = site.pages | where: "path", menu.page | first -%}
+					{%- assign url = my_page.url -%}
+					{%- endif -%}
+
+					{%- if menu.link -%}
+					{%- assign url = menu.link -%}
+					{%- endif -%}
+
 					<li class="{%- if menu.menu -%}nav-item dropdown px-2{%- else -%}nav-item px-2{%- endif -%}">
-						<a class="{%- if menu.menu -%}nav-link dropdown-toggle{%- else -%}nav-link{%- endif -%}" href="#" {%- if menu.menu -%}id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"{%- endif -%}>{{ menu.title }}</a>
+						<a class="{%- if menu.menu -%}nav-link dropdown-toggle{%- else -%}nav-link{%- endif -%}" href="{{ url }}" {%- if menu.menu -%}id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"{%- endif -%}>{{ menu.title }}</a>
 						{%- if menu.menu -%}
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 							{%- for submenu in menu.menu -%}
+							{%- assign url = "#" -%}
+
+							{%- if submenu.page -%}
+							{%- assign my_page = site.pages | where: "path", submenu.page | first -%}
+							{%- assign url = my_page.url -%}
+							{%- endif -%}
+
+							{%- if submenu.link -%}
+							{%- assign url = submenu.link -%}
+							{%- endif -%}
+
 							<li>
-								<a class="dropdown-item" href="aaaa">{{ submenu.title }}</a>
+								<a class="dropdown-item" href="{{ url }}">{{ submenu.title }}</a>
 								{%- if submenu.menu -%}
 									<ul class="dropdown-menu dropdown-submenu">
 										<li>
 											{%- for micromenu in submenu.menu -%}
-											<a class="dropdown-item" href="aaa">{{ micromenu.title }}</a>
+											{%- assign url = "#" -%}
+
+											{%- if micromenu.page -%}
+											{%- assign my_page = site.pages | where: "path", micromenu.page | first -%}
+											{%- assign url = my_page.url -%}
+											{%- endif -%}
+
+											{%- if micromenu.link -%}
+											{%- assign url = micromenu.link -%}
+											{%- endif -%}
+
+											<a class="dropdown-item" href="{{ url }}">{{ micromenu.title }}</a>
 											{%- endfor -%}
 										</li>
 									</ul>
