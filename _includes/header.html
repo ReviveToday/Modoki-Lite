@@ -1,22 +1,45 @@
 <header>
-	{%- assign default_paths = site.pages | map: "path" -%}
-	{%- assign page_paths = site.bootstrap.header_pages | default: default_paths -%}
-	{%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
 	<nav class="navbar navbar-dark navbar-expand-lg">
 		<div class="container">
 			<a class="navbar-brand" href="{{ "/" | relative_url }}">
 				<img class="rt-site-logo" alt="Revive Today" src="/assets/img/logo.webp">
 			</a>
-			{%- if titles_size > 0 -%}
+
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
+			
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-					{%- include menu.html -%}
+					{%- for menu in site.bootstrap.header_menu -%}
+					<li class="nav-item px-2">
+						<a class="{%- if menu.menu -%}nav-link dropdown-toggle{%- else -%}nav-link{%- endif -%}" href="#" {%- if menu.menu -%}id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"{%- endif -%}>{{ menu.title }}</a>
+						{%- if menu.menu -%}
+						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+							{%- for submenu in menu.menu -%}
+							<li>
+								<a class="dropdown-item" href="aaaa">{{ submenu.title }}</a>
+								{%- if submenu.menu -%}
+									<ul class="dropdown-menu dropdown-submenu">
+										<li>
+											{%- for micromenu in submenu.menu -%}
+											<a class="dropdown-item" href="aaa">{{ micromenu.title }}</a>
+											{%- endfor -%}
+										</li>
+									</ul>
+								{%- endif -%}
+							</li>
+							{%- endfor -%}
+						</ul>
+						{%- endif -%}
+					</li>
+					{%- endfor -%}
+			
+					<li class="nav-item px-2">
+						<a class="nav-link" href="#" id="rt-bright-toggle">🔆</a>
+					</li>
 				</ul>
-			</div>
-		{%- endif -%}
+			</div>			
 		</div>
 	</nav>
 </header>

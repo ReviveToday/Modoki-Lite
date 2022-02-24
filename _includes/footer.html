@@ -1,6 +1,8 @@
 <footer class="footer mt-auto py-2">
 	<ul class="nav justify-content-center mb-3">
-		<li class="nav-item"><a href="{% link about.md %}" class="nav-link px-2 text-white">About</a></li>
+		{%- for menu in site.bootstrap.footer_menu -%}
+		<li class="nav-item"><a href="aaaa" class="nav-link px-2 text-white">{{ menu.title }}</a></li>
+		{%- endfor -%}
 	</ul>
 	<p class="text-center text-white">&copy; 2018 - {{ 'now' | date: "%Y" }} Revive Today, a soupbowl site. Now powered by Jekyll.</p>
 </footer>
