@@ -76,7 +76,19 @@ disqus:
   show_policy: true
 ```
 
-`show_policy` will show a warning underneath the Disqus button to inform them of what they'll be agreeing to. 
+`show_policy` will show a warning underneath the Disqus button to inform them of what they'll be agreeing to.
+
+## Previewing
+
+This repository comes with a **Docker Compose** script to allow you to preview and trial the features of this theme before you begin rolling it into a site.
+
+To use, with Docker installed simply open a terminal in the root directory of the project on your machine (git cloned or download alike), and run:
+
+```
+docker-compose up
+```
+
+I recommend running the above like so, as it will attach the output to your current terminal. The script will continiously compile upon changes, so it lets you check to make sure files are updating as expected.
 
 ## Contributing
 
