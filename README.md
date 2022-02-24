@@ -2,7 +2,7 @@
 
 ![](/screenshot.png)
 
-Jekyll Bootstrap theme adjusted for [ReviveToday][rt]. Forked from [Jonah Aragon's Bootstrap Template][upstream], and using [Bootstrap 5]().
+[ReviveToday Modoki WordPress theme](https://github.com/ReviveToday/Modoki) adjusted for [ReviveToday][rt]. Forked from [Jonah Aragon's Bootstrap Template][upstream], and using [Bootstrap 5]().
 
 Since this has been forked, a majority of the documentation can be found on [the original repository][upstream].
 
@@ -56,6 +56,15 @@ The navigation bar system has been changed to support a few more options, such a
 * `header_menu` appears in the top, right hand side of the Bootstrap header. This will collapse into a button when the window is small/mobile.
   * Submenu's - a non-native Bootstrap feature - will show alongside Submenus in mobile mode.
 * `footer_menu` appears at the bottom of the page, but above the Copyright notice.
+
+### Alert Banners
+
+```markdown
+You should be careful of this!
+{: .rt-alert .error}
+```
+
+Using Kramdown, you can apply an alert box styling to the paragraph you are working on. The supported options are `info`, `success`, `warning` and `danger`.
 
 ### Disqus Opt-in
 
