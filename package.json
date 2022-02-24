@@ -1,7 +1,7 @@
 {
-  "name": "jekyll-bootstrap-theme",
+  "name": "modoki-lite",
   "version": "1.1.0",
-  "description": "A basic but extensible Jekyll theme based on Bootstrap 5.",
+  "description": "A ReviveToday theme based upon Jonah Aragon's Bootstrap template.",
   "main": "index.js",
   "scripts": {
     "assets:clean": "rm -rf assets/js && rm -rf _sass/bootstrap && rm -rf assets/css/fonts && rm -rf assets/css/bootstrap-icons.css",
@@ -15,17 +15,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jonaharagon/jekyll-bootstrap-theme.git"
+    "url": "git+https://github.com/ReviveToday/Modoki-Lite.git"
   },
   "keywords": [
     "jekyll"
   ],
-  "author": "Jonah Aragon",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/jonaharagon/jekyll-bootstrap-theme/issues"
-  },
-  "homepage": "https://github.com/jonaharagon/jekyll-bootstrap-theme#readme",
+  "homepage": "https://github.com/ReviveToday/Modoki-Lite",
   "dependencies": {
     "bootstrap": "^5.0.1",
     "bootstrap-icons": "^1.5.0"

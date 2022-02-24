@@ -1,7 +1,6 @@
-title: Your awesome title
-author:
-  name: 'Github User'
-  email: 'github@example.com'
+title: AwesomeThing
+tagline: Something cool the site does
+email: code@revive.today
 description: >- # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
@@ -19,31 +18,30 @@ excerpts:
 bootstrap:
   # Theme date format
   # refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
-  date_format: "%b %-d, %Y"
+  date_format: "%-d %B %Y"
 
-  # If you want to link only specific pages in your header, uncomment
-  # this and add the path to the page *files* in order as they should show up
-  #header_pages:
-  # - about.md
+  # Header menu has 2 levels of submenu.
+  header_menu:
+  - title: Page Title
+    page: about.md
+  - title: External Thing
+    link: https://google.com
+  - title: SubThing
+    menu:
+    - title: Page Title
+      menu:
+      - title: Page Title
+        page: about.md
+  
+  # Footer menu does not support submenu.
+  footer_menu:
+  - title: Fancy Thing
+    page: about.md
 
-  # generate social links in footer
-  social_links:
-    twitter: 'https://twitter.com/jonaharagon'
-    github:  'https://github.com/jonaharagon'
-    #facebook: 'https://example.com/@jekyllrb'
-    #instagram: 'https://example.com/@jekyllrb'
-    #linkedin: 'https://example.com/@jekyllrb'
-    #google: 'https://example.com/@jekyllrb'
-    #youtube: 'https://example.com/@jekyllrb'
-    #twitch: 'https://example.com/@jekyllrb'
-    #telegram: 'https://example.com/@jekyllrb'
-    #whatsapp: 'https://example.com/@jekyllrb'
-    #discord: 'https://example.com/@jekyllrb'
-    #slack: 'https://example.com/@jekyllrb'
 
 
 # Build settings
-theme: jekyll-bootstrap-theme
+theme: modoki-lite
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
