@@ -138,6 +138,10 @@ a:hover {
 	padding: 10px 20px;
 	color: #FFF;
 
+	&:hover {
+		color: #FFF;
+	}
+
 	a {
 		color: #FFF;
 		text-decoration: none;
